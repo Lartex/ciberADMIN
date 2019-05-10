@@ -1,3 +1,5 @@
+import { FormComponent } from './pages/form/form.component';
+import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
 import { RegisterComponent } from './pages/login/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -12,6 +14,8 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'account-settings', component: AccountSettingsComponent },
+      { path: 'form', component: FormComponent },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ]
   },

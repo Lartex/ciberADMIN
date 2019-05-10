@@ -12,6 +12,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
 import { PagesComponent } from './pages/pages.component';
+import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PagesComponent } from './pages/pages.component';
     BreadcrumbsComponent,
     PagenotfoundComponent,
     PagesComponent,
-    RegisterComponent
+    RegisterComponent,
+    AccountSettingsComponent
   ],
   imports: [
     BrowserModule,
