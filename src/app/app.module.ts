@@ -1,3 +1,4 @@
+import { RegisterComponent } from './pages/login/register.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,6 +11,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.compon
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    PagesComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
