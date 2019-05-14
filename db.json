@@ -1,0 +1,130 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Cristian",
+      "lastName": "Benitez Alvarez",
+      "percent_dedication": "FrontEnd",
+      "experience": "Junior",
+      "in_project": "Yes",
+      "technology": "angular"
+    },
+    {
+      "id": 2,
+      "firstName": "Mark",
+      "lastName": "Zuckerberg Garcia",
+      "percent_dedication": "Backend",
+      "experience": "Senior",
+      "in_project": "Yes",
+      "technology": "nodejs"
+    },
+    {
+      "id": 3,
+      "firstName": "Jeff",
+      "lastName": "Bezos Lopez",
+      "percent_dedication": "Backend",
+      "experience": "Senior",
+      "in_project": "No",
+      "technology": "java"
+    },
+    {
+      "id": 4,
+      "firstName": "Alejandro",
+      "lastName": "Lopera Gonzales",
+      "percent_dedication": "Backend",
+      "experience": "Senior",
+      "in_project": "Yes",
+      "technology": "java"
+    },
+    {
+      "id": 5,
+      "firstName": "Marcos",
+      "lastName": "Aranda Fernandez",
+      "percent_dedication": "FrontEnd",
+      "experience": "Junior",
+      "in_project": "No",
+      "technology": "java"
+    },
+    {
+      "id": 6,
+      "firstName": "Lucia",
+      "lastName": "Haz",
+      "percent_dedication": "Backend",
+      "experience": "Junior",
+      "in_project": "No",
+      "technology": "java"
+    },
+    {
+      "id": 7,
+      "firstName": "Sara",
+      "lastName": "Arias Alonso",
+      "percent_dedication": "Backend",
+      "experience": "Senior",
+      "in_project": "Yes",
+      "technology": "angular"
+    },
+    {
+      "id": 8,
+      "firstName": "Beatriz",
+      "lastName": "Ramos Lopez",
+      "percent_dedication": "FrontEnd",
+      "experience": "Senior",
+      "in_project": "Yes",
+      "technology": "angular"
+    },
+    {
+      "id": 9,
+      "firstName": "Pedro",
+      "lastName": "Rodriguez Delgado",
+      "percent_dedication": "FrontEnd",
+      "experience": "Senior",
+      "in_project": "Yes",
+      "technology": "nodejs"
+    },
+    {
+      "id": 10,
+      "firstName": "Fernando",
+      "lastName": "Garrosa Morales",
+      "percent_dedication": "FrontEnd",
+      "experience": "Senior",
+      "in_project": "No",
+      "technology": "angular"
+    },
+    {
+      "id": 11,
+      "firstName": "Diego",
+      "lastName": "Morata Torres",
+      "percent_dedication": "Backend",
+      "experience": "Junior",
+      "in_project": "No",
+      "technology": "nodejs"
+    },
+    {
+      "id": 12,
+      "firstName": "Ana",
+      "lastName": "Zeballos Serrano",
+      "percent_dedication": "Backend",
+      "experience": "Junior",
+      "in_project": "Yes",
+      "technology": "java"
+    },
+    {
+      "id": 13,
+      "firstName": "Daniel",
+      "lastName": "Almodovar Alvarez",
+      "percent_dedication": "FrontEnd",
+      "experience": "Senior",
+      "in_project": "Yes",
+      "technology": "nodejs"
+    },
+    {
+      "firstName": "cristian",
+      "lastName": "benitez",
+      "percent_dedication": "front",
+      "experience": "junior",
+      "in_project": "sin proyecto",
+      "technology": "angular",
+      "id": 17
+    }
+  ]
+}

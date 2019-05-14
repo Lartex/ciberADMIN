@@ -13,6 +13,10 @@ import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component
 import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
 import { PagesComponent } from './pages/pages.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { FormUpdateComponent } from './pages/form-update/form-update.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +30,16 @@ import { AccountSettingsComponent } from './pages/account-settings/account-setti
     PagenotfoundComponent,
     PagesComponent,
     RegisterComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    FormUpdateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

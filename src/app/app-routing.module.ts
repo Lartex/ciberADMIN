@@ -1,3 +1,4 @@
+import { FormUpdateComponent } from './pages/form-update/form-update.component';
 import { FormComponent } from './pages/form/form.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
 import { RegisterComponent } from './pages/login/register.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'account-settings', component: AccountSettingsComponent },
       { path: 'form', component: FormComponent },
+      { path: 'form-update/:id', component: FormUpdateComponent },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ]
   },
