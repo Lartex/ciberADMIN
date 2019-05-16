@@ -6,7 +6,7 @@
       "lastName": "Benitez Alvarez",
       "percent_dedication": "FrontEnd",
       "experience": "Junior",
-      "in_project": "Yes",
+      "in_project": "Si",
       "technology": "angular"
     },
     {
@@ -15,8 +15,9 @@
       "lastName": "Zuckerberg Garcia",
       "percent_dedication": "Backend",
       "experience": "Senior",
-      "in_project": "Yes",
-      "technology": "nodejs"
+      "in_project": "Si",
+      "technology": "nodejs",
+      "date_enter": "2019-04-24T10:13:50.183Z"
     },
     {
       "id": 3,
@@ -33,7 +34,7 @@
       "lastName": "Lopera Gonzales",
       "percent_dedication": "Backend",
       "experience": "Senior",
-      "in_project": "Yes",
+      "in_project": "Si",
       "technology": "java"
     },
     {
@@ -60,26 +61,26 @@
       "lastName": "Arias Alonso",
       "percent_dedication": "Backend",
       "experience": "Senior",
-      "in_project": "Yes",
+      "in_project": "Si",
       "technology": "angular"
     },
     {
-      "id": 8,
-      "firstName": "Beatriz",
-      "lastName": "Ramos Lopez",
-      "percent_dedication": "FrontEnd",
-      "experience": "Senior",
-      "in_project": "Yes",
-      "technology": "angular"
+      "firstName": "Marta",
+      "lastName": "Serrano",
+      "percent_dedication": "front",
+      "experience": "junior",
+      "in_project": "sin proyecto",
+      "technology": "nodejs",
+      "id": 8
     },
     {
-      "id": 9,
-      "firstName": "Pedro",
-      "lastName": "Rodriguez Delgado",
-      "percent_dedication": "FrontEnd",
-      "experience": "Senior",
-      "in_project": "Yes",
-      "technology": "nodejs"
+      "firstName": "Lionel",
+      "lastName": "benitez",
+      "percent_dedication": "asdasdsa",
+      "experience": "junior",
+      "in_project": "sin proyecto",
+      "technology": "angular",
+      "id": 9
     },
     {
       "id": 10,
@@ -100,22 +101,22 @@
       "technology": "nodejs"
     },
     {
-      "id": 12,
-      "firstName": "Ana",
-      "lastName": "Zeballos Serrano",
-      "percent_dedication": "Backend",
-      "experience": "Junior",
-      "in_project": "Yes",
-      "technology": "java"
+      "firstName": "jose",
+      "lastName": "benitez",
+      "percent_dedication": "front",
+      "experience": "junior",
+      "in_project": "sin proyecto",
+      "technology": "angular",
+      "id": 12
     },
     {
-      "id": 13,
-      "firstName": "Daniel",
-      "lastName": "Almodovar Alvarez",
-      "percent_dedication": "FrontEnd",
-      "experience": "Senior",
-      "in_project": "Yes",
-      "technology": "nodejs"
+      "firstName": "javier",
+      "lastName": "benitez",
+      "percent_dedication": "front",
+      "experience": "junior",
+      "in_project": "sin proyecto",
+      "technology": "angular",
+      "id": 13
     },
     {
       "firstName": "cristian",
@@ -124,7 +125,36 @@
       "experience": "junior",
       "in_project": "sin proyecto",
       "technology": "angular",
-      "id": 17
+      "date_enter": "2019-05-14T10:18:34.670Z",
+      "id": 22
+    },
+    {
+      "firstName": "David",
+      "lastName": "Garrosa",
+      "percent_dedication": "front",
+      "experience": "junior",
+      "in_project": "sin proyecto",
+      "technology": "nodejs",
+      "id": 23
+    },
+    {
+      "firstName": "Laura",
+      "lastName": " Lopez Gimenez",
+      "percent_dedication": "front",
+      "experience": "junior",
+      "in_project": "sin proyecto",
+      "technology": "angular",
+      "id": 24
+    },
+    {
+      "firstName": "Javier",
+      "lastName": "Gonzales",
+      "percent_dedication": "front",
+      "experience": "junior",
+      "in_project": "Santander",
+      "technology": "angular",
+      "date_enter": "2019-05-16T11:09:03.011Z",
+      "id": 25
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { SearchComponent } from './pages/search/search.component';
 import { FormUpdateComponent } from './pages/form-update/form-update.component';
 import { FormComponent } from './pages/form/form.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
@@ -8,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
 import { PagesComponent } from './pages/pages.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,8 @@ const routes: Routes = [
       { path: 'account-settings', component: AccountSettingsComponent },
       { path: 'form', component: FormComponent },
       { path: 'form-update/:id', component: FormUpdateComponent },
+      { path: 'search/:term', component: SearchComponent },
+      { path: 'user/:id', component: ProfileComponent },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ]
   },

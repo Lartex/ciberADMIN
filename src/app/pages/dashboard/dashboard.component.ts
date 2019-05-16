@@ -1,6 +1,9 @@
 import { CrudService } from './../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Moment } from 'moment';
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +14,7 @@ export class DashboardComponent implements OnInit{
 
   users:any;
   id:number;
-
-
+  date_now = new Date();
 
 
   constructor(private _crudService: CrudService,
@@ -21,12 +23,32 @@ export class DashboardComponent implements OnInit{
 
   ngOnInit() {
     this.getUsers();
+/*    this.getData(); */
+
+
   }
 
   getUsers(){
         this._crudService.getUsers()
-          .subscribe( data => this.users = data);
+          .subscribe( data => {
+            this.users = data;
+            console.log( this.users)
+          });
   }
+
+
+/* funcion para coger todas las fechas
+
+    getData(){
+        this._crudService.getUsers()
+          .subscribe( data => {
+            for (let prop in data) {
+               let date1 = data[prop].date_enter;
+          }
+          });
+  }
+ */
+
 
 
   deleteUser(id){
@@ -41,6 +63,9 @@ export class DashboardComponent implements OnInit{
 
   }
 
+  seeUser( idx:string) {
+    this.router.navigate(['/user', idx])
+  }
 
 
 

@@ -17,6 +17,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FormUpdateComponent } from './pages/form-update/form-update.component';
+import { SearchComponent } from './pages/search/search.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FormUpdateComponent } from './pages/form-update/form-update.component';
     PagesComponent,
     RegisterComponent,
     AccountSettingsComponent,
-    FormUpdateComponent
+    FormUpdateComponent,
+    SearchComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

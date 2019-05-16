@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -9,25 +9,22 @@ import { Observable } from 'rxjs';
 })
 export class CrudService {
 
-  url:string = 'http://localhost:4000';
-    private headers = new HttpHeaders({ 'Content-Type' : 'application/json'});
+  url: string = 'http://localhost:4000';
+  users: any;
 
-  constructor(private http:HttpClient) {
-
+  constructor(private http: HttpClient) {
 
   }
 
-
-
-  getUsers(){
+  getUsers() {
     return this.http.get(this.url + '/users')
-      .pipe(map( res => {
-       return res;
+      .pipe(map(res => {
+        this.users = res;
+        return res;
       }))
   }
 
-
-  addNewUser(user){
+  addNewUser(user) {
     return this.http.post(this.url + '/users/', user);
   }
 
@@ -39,6 +36,29 @@ export class CrudService {
     return this.http.put(this.url + '/users/' + id, user);
   }
 
+  searchUser(term: string) {
+    let userArr = []
+    term = term.toLowerCase();
+
+    for (let user of this.users) {
+      let name = user.firstName.toLowerCase();
+      let technology = user.technology.toLowerCase();
+      if (name.indexOf(term) >= 0) {
+        userArr.push(user);
+      }
+      if (technology.indexOf(term) >= 0) {
+        userArr.push(user);
+      }
+
+
+    }
+
+    return userArr;
+  }
+
+  getOneUser(idx:string ){
+    return this.users[idx];
+  }
 
 
 
