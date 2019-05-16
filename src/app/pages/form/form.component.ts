@@ -1,5 +1,6 @@
 import { CrudService } from './../../services/crud.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit{
 
+  @ViewChild('userData') public createForm: NgForm;
   users:any;
+  name:string;
   confirmText:string = "El usuario fue añadido con éxito."
   isAdded:boolean;
   date_now = new Date();
@@ -48,8 +51,12 @@ export class FormComponent implements OnInit{
       .subscribe(
           res => {
            this.isAdded = true;
+
           }
       );
+
+
+      this.createForm.reset();
 
   }
 

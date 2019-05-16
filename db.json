@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "id": 1,
       "firstName": "Cristian",
       "lastName": "Benitez Alvarez",
       "percent_dedication": "FrontEnd",
       "experience": "Junior",
       "in_project": "Si",
-      "technology": "angular"
+      "technology": "nodejs",
+      "id": 1
     },
     {
       "id": 2,
@@ -101,34 +101,6 @@
       "technology": "nodejs"
     },
     {
-      "firstName": "jose",
-      "lastName": "benitez",
-      "percent_dedication": "front",
-      "experience": "junior",
-      "in_project": "sin proyecto",
-      "technology": "angular",
-      "id": 12
-    },
-    {
-      "firstName": "javier",
-      "lastName": "benitez",
-      "percent_dedication": "front",
-      "experience": "junior",
-      "in_project": "sin proyecto",
-      "technology": "angular",
-      "id": 13
-    },
-    {
-      "firstName": "cristian",
-      "lastName": "benitez",
-      "percent_dedication": "front",
-      "experience": "junior",
-      "in_project": "sin proyecto",
-      "technology": "angular",
-      "date_enter": "2019-05-14T10:18:34.670Z",
-      "id": 22
-    },
-    {
       "firstName": "David",
       "lastName": "Garrosa",
       "percent_dedication": "front",
@@ -155,6 +127,16 @@
       "technology": "angular",
       "date_enter": "2019-05-16T11:09:03.011Z",
       "id": 25
+    },
+    {
+      "firstName": "Maria",
+      "lastName": "Jambrina Jerez",
+      "percent_dedication": "front",
+      "experience": "senior",
+      "in_project": "sin proyecto",
+      "technology": "nodejs",
+      "date_enter": "2019-05-16T11:42:47.145Z",
+      "id": 28
     }
   ]
 }
