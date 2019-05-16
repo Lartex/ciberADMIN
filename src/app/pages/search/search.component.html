@@ -6,9 +6,10 @@
                   <div class="col-lg-3 col-md-6" *ngFor="let user of users" >
                       <!-- Card -->
                       <div class="card">
-                          <img *ngIf="user.technology == 'angular'" class="card-img-top img-responsive" src="assets/images/angular.png" alt="Card image cap">
-                          <img *ngIf="user.technology == 'nodejs'" class="card-img-top img-responsive" src="assets/images/nodejs.png" alt="Card image cap">
-                          <img *ngIf="user.technology == 'java'" class="card-img-top img-responsive" src="assets/images/java.png" alt="Card image cap">
+                          <img *ngIf="user.technology == 'Angular'" class="card-img-top img-responsive" src="assets/images/angular.png" alt="Card image cap">
+                          <img *ngIf="user.technology == 'Nodejs'" class="card-img-top img-responsive" src="assets/images/nodejs.png" alt="Card image cap">
+                          <img *ngIf="user.technology == 'Java'" class="card-img-top img-responsive" src="assets/images/java.png" alt="Card image cap">
+                          <img *ngIf="user.technology == 'Vue'" class="card-img-top img-responsive" src="assets/images/vue.png" alt="Card image cap">
                           <div class="card-body">
                               <h3 class="card-title">{{user.firstName}} <span> {{user.lastName}}</span></h3>
                               <p class="card-text">Fecha incorporacion: {{user.date_enter | date: 'dd/MM/yyyy' }}</p>

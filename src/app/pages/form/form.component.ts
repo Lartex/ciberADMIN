@@ -16,6 +16,7 @@ export class FormComponent implements OnInit{
   confirmText:string = "El usuario fue añadido con éxito."
   isAdded:boolean;
   date_now = new Date();
+  techs:any[] = []
 
 
 
@@ -25,12 +26,20 @@ export class FormComponent implements OnInit{
 
   ngOnInit() {
     this.getUsers();
+
+    this.techs = [
+      {id:1, name:'Angular'},
+      {id:2, name:'Vue'},
+      {id:3, name:'Nodejs'},
+      {id:4, name:'Java'}
+    ]
   }
 
   getUsers(){
         this._crudService.getUsers()
           .subscribe( data => {
             this.users = data;
+            console.log(this.users)
           });
   }
 

@@ -97,7 +97,8 @@
                             <div *ngIf="isAdded" class="alert alert-success" role="alert">
                                 {{confirmText}}
                               </div> -->
-                              <legend>Modificar Datos</legend>
+                              <h4 class="font-medium m-t-30">Modificar Datos</h4>
+                              <hr>
 
                               <div class="tab-pane" id="settings" role="tabpanel">
                                   <div class="card-body">
@@ -112,31 +113,36 @@
                                           <div class="form-group">
                                               <label for="example-email" class="col-md-12">Apellidos</label>
                                               <div class="col-md-12">
-                                                  <input class="form-control form-control-line" type="apellidos" name="apellidos" id="apellidos"  [(ngModel)]="user.lastName">
+                                                  <input class="form-control form-control-line" type="text" name="apellidos" id="apellidos"  [(ngModel)]="user.lastName">
                                               </div>
                                           </div>
                                           <div class="form-group">
                                               <label class="col-md-12">Dedicacion</label>
                                               <div class="col-md-12">
-                                                  <input  class="form-control form-control-line" type="dedicacion" name="dedicacion" id="dedicacion" [(ngModel)]="user.percent_dedication">
+                                                  <input  class="form-control form-control-line" type="text" name="dedicacion" id="dedicacion" [(ngModel)]="user.percent_dedication">
                                               </div>
                                           </div>
                                           <div class="form-group">
                                               <label class="col-md-12">Experiencia</label>
                                               <div class="col-md-12">
-                                                  <input  class="form-control form-control-line" type="experiencia" name="experiencia" id="experiencia" [(ngModel)]="user.experience">
+                                                  <input  class="form-control form-control-line" type="text" name="experiencia" id="experiencia" [(ngModel)]="user.experience">
                                               </div>
                                           </div>
                                           <div class="form-group">
                                               <label class="col-md-12">Proyecto asignado</label>
                                               <div class="col-md-12">
-                                                  <input class="form-control form-control-line" type="proyecto" name="proyecto" id="proyecto" [(ngModel)]="user.in_project">
+                                                  <input class="form-control form-control-line" type="text" name="proyecto" id="proyecto" [(ngModel)]="user.in_project">
                                               </div>
                                           </div>
                                           <div class="form-group">
                                               <label class="col-md-12">Tecnologia</label>
                                               <div class="col-md-12">
-                                                  <input class="form-control form-control-line"  type="tech" name="tech" id="tech" [(ngModel)]="user.technology" >
+                                               <!--    <input class="form-control form-control-line"  type="text" name="tech" id="tech" [(ngModel)]="user.technology" > -->
+                                               <select requiered   [(ngModel)]="user.technology" class="form-control form-control-line"  name="tech" id="tech">
+                                                  <option *ngFor="let tech of techs" [value]="tech.name">
+                                                    {{tech.name}}
+                                                  </option>
+                                               </select>
                                               </div>
                                           </div>
 

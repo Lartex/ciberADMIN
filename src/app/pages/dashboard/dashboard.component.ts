@@ -64,6 +64,7 @@ export class DashboardComponent implements OnInit{
   }
 
   seeUser( idx:string) {
+    window.scrollTo(0,0);
     this.router.navigate(['/user', idx])
   }
 

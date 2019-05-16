@@ -63,7 +63,11 @@
                                           <div class="form-group">
                                               <label class="col-md-12">Tecnologia</label>
                                               <div class="col-md-12">
-                                                  <input class="form-control form-control-line"  type="tech" name="tech" id="tech" ngModel >
+                                                  <select requiered   [(ngModel)]="users" class="form-control form-control-line"  name="tech" id="tech">
+                                                      <option *ngFor="let tech of techs" [value]="tech.name">
+                                                        {{tech.name}}
+                                                      </option>
+                                                   </select>
                                               </div>
                                           </div>
 

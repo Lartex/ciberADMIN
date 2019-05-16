@@ -11,18 +11,23 @@ export class ProfileComponent implements OnInit {
 
   user:any ={}
   id:any;
+ techs:any[] = []
 
   constructor(private _activatedRoute:ActivatedRoute,
                  private crud:CrudService,
                  private router:Router ) {
 
-    this._activatedRoute.params.subscribe(params => {
-      this.user = this.crud.getOneUser( params['id']);
-
-    })
+                  this.getParams();
    }
 
   ngOnInit() {
+
+    this.techs = [
+      {id:1, name:'Angular'},
+      {id:2, name:'Vue'},
+      {id:3, name:'Nodejs'},
+      {id:4, name:'Java'}
+    ]
   }
 
 
@@ -32,6 +37,7 @@ export class ProfileComponent implements OnInit {
 
     this._activatedRoute.params.subscribe(params => {
       this.user = this.crud.getOneUser( params['id']);
+      console.log(this.user)
 
     })
 
@@ -46,7 +52,9 @@ export class ProfileComponent implements OnInit {
     };
 
     this.crud.updateUser(user, this.user.id)
-      .subscribe(data => console.log(data))
+      .subscribe(data => {
+        this.getParams();
+      })
 
   }
 
@@ -61,6 +69,13 @@ export class ProfileComponent implements OnInit {
      );
     }
 
+  }
+
+  getParams(){
+    this._activatedRoute.params.subscribe(params => {
+      this.user = this.crud.getOneUser( params['id']);
+
+    })
   }
 
 
