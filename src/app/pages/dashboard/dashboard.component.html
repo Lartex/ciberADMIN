@@ -78,7 +78,7 @@
                               <h3 class="card-title">{{user.firstName}} <span> {{user.lastName}}</span></h3>
                               <hr>
                               <p class="card-text">Fecha incorporacion: {{user.date_enter | date: 'dd/MM/yyyy' }}</p>
-                              <p class="card-text">Antigüedad: {{user.date_enter | date: 'dd/MM/yyyy' }}</p>
+                              <p class="card-text">Antigüedad: {{user.date_now }}</p>
                               <p class="card-text">Tecnologia: {{user.technology }}</p>
                               <p class="card-text">Experiencia: {{user.experience }}</p>
                               <button (click)="seeUser(i)" type="button" class="btn btn-outline-primary btn-blick">Ver perfil</button>

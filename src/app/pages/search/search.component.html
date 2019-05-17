@@ -3,7 +3,7 @@
 
 <div class="row">
                   <!-- column -->
-                  <div class="col-lg-3 col-md-6" *ngFor="let user of users" >
+                  <div class="col-lg-3 col-md-6" *ngFor="let user of users; let i = index" >
                       <!-- Card -->
                       <div class="card">
                           <img *ngIf="user.technology == 'Angular'" class="card-img-top img-responsive" src="assets/images/angular.png" alt="Card image cap">
@@ -16,7 +16,7 @@
                               <p class="card-text">Antigüedad: {{user.date_enter | date: 'dd/MM/yyyy' }}</p>
                               <p class="card-text">Tecnologia: {{user.technology }}</p>
                               <p class="card-text">Experiencia: {{user.experience }}</p>
-                              <a href="#" class="btn btn-primary">Ver perfil</a>
+                              <button (click)="seeUser(i)" type="button" class="btn btn-outline-primary btn-blick">Ver perfil</button>
                           </div>
                           <!-- Card -->
                       </div>

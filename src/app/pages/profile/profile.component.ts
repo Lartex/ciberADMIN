@@ -35,12 +35,7 @@ export class ProfileComponent implements OnInit {
   updateUser(values){
 
 
-    this._activatedRoute.params.subscribe(params => {
-      this.user = this.crud.getOneUser( params['id']);
-      console.log(this.user)
-
-    })
-
+    this.getParams();
 
     const user = {
       "firstName": values.name,
@@ -54,6 +49,7 @@ export class ProfileComponent implements OnInit {
     this.crud.updateUser(user, this.user.id)
       .subscribe(data => {
         this.getParams();
+        console.log(this.getParams())
       })
 
   }
@@ -74,6 +70,7 @@ export class ProfileComponent implements OnInit {
   getParams(){
     this._activatedRoute.params.subscribe(params => {
       this.user = this.crud.getOneUser( params['id']);
+      console.log(this.user)
 
     })
   }

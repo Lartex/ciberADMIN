@@ -15,9 +15,9 @@ export class FormComponent implements OnInit{
   name:string;
   confirmText:string = "El usuario fue añadido con éxito."
   isAdded:boolean;
-  date_now = new Date();
-  techs:any[] = []
-
+  date_now;
+  techs:any[] = [];
+  newUserAdded:any;
 
 
 
@@ -33,6 +33,8 @@ export class FormComponent implements OnInit{
       {id:3, name:'Nodejs'},
       {id:4, name:'Java'}
     ]
+
+
   }
 
   getUsers(){
@@ -52,7 +54,8 @@ export class FormComponent implements OnInit{
       "experience": user.experiencia,
       "in_project": user.proyecto,
       "technology": user.tech,
-      "date_enter": new Date()
+      "date_enter": new Date(),
+      "date_now": ''
 
   };
 
@@ -60,7 +63,7 @@ export class FormComponent implements OnInit{
       .subscribe(
           res => {
            this.isAdded = true;
-
+           this.newUserAdded = res;
           }
       );
 
