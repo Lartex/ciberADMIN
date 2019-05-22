@@ -45,9 +45,38 @@
       "experience": "junior",
       "in_project": "Si",
       "technology": "Nodejs",
-      "date_enter": "2019-05-17T10:56:23.659Z",
-      "date_now": "",
       "id": 6
+    },
+    {
+      "firstName": "sfsaf",
+      "lastName": "asfa",
+      "percent_dedication": "fsafa",
+      "experience": "fasfa",
+      "in_project": "afas",
+      "technology": "Nodejs",
+      "date_enter": "2018-05-17T11:35:51.744Z",
+      "date_now": "",
+      "id": 8
+    },
+    {
+      "firstName": "Cristian",
+      "lastName": "Benitez Alvarez",
+      "percent_dedication": "FrontEnd",
+      "experience": "senior",
+      "in_project": "sin proyecto",
+      "technology": "Nodejs",
+      "id": 9
+    },
+    {
+      "firstName": "Cristian",
+      "lastName": "dssda",
+      "percent_dedication": "sada",
+      "experience": "junior",
+      "in_project": "Si",
+      "technology": "Java",
+      "date_enter": "2019-05-20T10:04:36.976Z",
+      "date_now": "",
+      "id": 10
     }
   ]
 }

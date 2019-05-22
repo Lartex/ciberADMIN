@@ -51,9 +51,9 @@ console.log
           .subscribe( data => {
             for (let prop in data) {
               this.date_now = moment(data[prop].date_enter, "YYYYMMDD").fromNow();
-               console.log(this.date_now );
                this.users[prop].date_now = this.date_now ;
                console.log(this.date_now );
+
 
              }
           });
