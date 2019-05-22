@@ -11,36 +11,30 @@ import * as moment from 'moment';
 })
 export class ProfileComponent implements OnInit {
 
-  user:any ={}
-  id:any;
- techs:any[] = []
- date_now:any;
+  user: any = {}
+  id: any;
+  techs: any[] = []
+  date_now: any;
+  date_thismoment: any;
 
-  constructor(private _activatedRoute:ActivatedRoute,
-                 private crud:CrudService,
-                 private router:Router ) {
+  constructor(private _activatedRoute: ActivatedRoute,
+    private crud: CrudService,
+    private router: Router) {
 
-                  this.getParams();
-   }
+    this.getParams();
+  }
 
   ngOnInit() {
-
-    this.getData();
-
     this.techs = [
-      {id:1, name:'Angular'},
-      {id:2, name:'Vue'},
-      {id:3, name:'Nodejs'},
-      {id:4, name:'Java'}
+      { id: 1, name: 'Angular' },
+      { id: 2, name: 'Vue' },
+      { id: 3, name: 'Nodejs' },
+      { id: 4, name: 'Java' }
     ]
   }
 
-
-
-  updateUser(values){
-
-
-    this.getParams();
+  //Funcion que hace el update del usuario desde el perfil de usuario
+  updateUser(values) {
 
     const user = {
       "firstName": values.name,
@@ -49,50 +43,46 @@ export class ProfileComponent implements OnInit {
       "experience": values.experiencia,
       "in_project": values.proyecto,
       "technology": values.tech,
-      "date_now": values.dateNow
+      "date_enter": this.user.date_enter,
+      "date_now": this.user.date_now
     };
 
     this.crud.updateUser(user, this.user.id)
       .subscribe(data => {
-        this.getParams();
-        console.log(this.getParams())
-      })
+        console.log(data);
+      });
 
   }
 
-
-  deleteUser(id){
-    if(confirm("¿Estas seguro?")){
-     this.crud.deleteUser(id)
-     .subscribe(
-       res => {
-        this.router.navigate(['/dashboard'])
-       }
-     );
+  //Funcion que elimina al usuario.
+  deleteUser(id) {
+    if (confirm("¿Estas seguro?")) {
+      this.crud.deleteUser(id)
+        .subscribe(
+          res => {
+            this.router.navigate(['/dashboard'])
+          }
+        );
     }
 
   }
 
-  getParams(){
+  //Funcion que obtiene todos los datos del id del usuario en el que estamos.
+  getParams() {
     this._activatedRoute.params.subscribe(params => {
-      this.user = this.crud.getOneUser( params['id']);
+      this.user = this.crud.getOneUser(params['id']);
+
+      this.date_now = moment(this.user.date_enter, 'DD/MM/YYYY');
+      this.date_thismoment = moment(new Date(), 'DD/MM/YYYY');
+
+      let days = this.date_thismoment.diff(this.date_now, 'days');
+      this.user.date_now = days;
       console.log(this.user)
 
     })
   }
 
-  getData(){
-    this.crud.getUsers()
-      .subscribe( data => {
-        for (let prop in data) {
-          this.date_now = moment(data[prop].date_enter, "YYYYMMDD").fromNow();
-           this.user.date_now = this.date_now ;
-           console.log(this.date_now );
 
-
-         }
-      });
-}
 
 
 }

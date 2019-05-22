@@ -21,6 +21,8 @@ export class FormComponent implements OnInit{
 
 
 
+
+
   constructor(private _crudService: CrudService) { }
 
 
@@ -47,6 +49,9 @@ export class FormComponent implements OnInit{
 
   addNewUser(user){
 
+    let date_enter = new Date().toLocaleString("es-EU", {timeZone: "Europe/Madrid"});
+
+
      const userObj = {
       "firstName": user.name,
       "lastName": user.apellidos,
@@ -54,7 +59,7 @@ export class FormComponent implements OnInit{
       "experience": user.experiencia,
       "in_project": user.proyecto,
       "technology": user.tech,
-      "date_enter": new Date(),
+      "date_enter": date_enter.toLocaleString(),
       "date_now": ''
 
   };

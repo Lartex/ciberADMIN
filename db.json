@@ -1,82 +1,37 @@
 {
   "users": [
     {
-      "firstName": "cristian",
-      "lastName": "benitez",
-      "percent_dedication": "front",
-      "experience": "junior",
-      "in_project": "sin proyecto",
-      "technology": "Java",
-      "id": 2
-    },
-    {
-      "firstName": "cristian",
-      "lastName": "benitez",
-      "percent_dedication": "front",
-      "experience": "junior",
-      "in_project": "sin proyecto",
-      "technology": "Vue",
-      "date_enter": "2019-05-17T10:25:55.830Z",
-      "date_now": "",
-      "id": 3
-    },
-    {
-      "firstName": "Javier",
+      "firstName": "Cristian",
       "lastName": "Garrosa",
       "percent_dedication": "FrontEnd",
       "experience": "junior",
-      "in_project": "sin proyecto",
-      "technology": "Angular",
-      "id": 4
-    },
-    {
-      "firstName": "cristian",
-      "lastName": "benitez",
-      "percent_dedication": "front",
-      "experience": "junior",
-      "in_project": "sin proyecto",
-      "technology": "Nodejs",
-      "id": 5
-    },
-    {
-      "firstName": "cristian",
-      "lastName": "Messi",
-      "percent_dedication": "front",
-      "experience": "junior",
-      "in_project": "Si",
-      "technology": "Nodejs",
-      "id": 6
-    },
-    {
-      "firstName": "sfsaf",
-      "lastName": "asfa",
-      "percent_dedication": "fsafa",
-      "experience": "fasfa",
-      "in_project": "afas",
-      "technology": "Nodejs",
-      "date_enter": "2018-05-17T11:35:51.744Z",
+      "in_project": "Funciona",
+      "technology": "Vue",
+      "date_enter": "22/5/2019 10:16:05",
       "date_now": "",
-      "id": 8
+      "id": 16
     },
     {
-      "firstName": "Cristian",
-      "lastName": "Benitez Alvarez",
+      "firstName": "Javier",
+      "lastName": "Gutierrez",
       "percent_dedication": "FrontEnd",
-      "experience": "senior",
-      "in_project": "sin proyecto",
-      "technology": "Nodejs",
-      "id": 9
+      "experience": "Senior",
+      "in_project": "Santander",
+      "technology": "Angular",
+      "date_enter": "20/5/2019 10:42:38",
+      "date_now": 0,
+      "id": 18
     },
     {
-      "firstName": "Cristian",
-      "lastName": "dssda",
-      "percent_dedication": "sada",
-      "experience": "junior",
-      "in_project": "Si",
+      "firstName": "Fernando",
+      "lastName": "Aranda Fernandez",
+      "percent_dedication": "Backend",
+      "experience": "Junior",
+      "in_project": "Sin proyecto",
       "technology": "Java",
-      "date_enter": "2019-05-20T10:04:36.976Z",
+      "date_enter": "22/5/2019 10:54:46",
       "date_now": "",
-      "id": 10
+      "id": 19
     }
   ]
 }
