@@ -1,5 +1,4 @@
 import { SearchComponent } from './pages/search/search.component';
-import { FormUpdateComponent } from './pages/form-update/form-update.component';
 import { FormComponent } from './pages/form/form.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
 import { RegisterComponent } from './pages/login/register.component';
@@ -19,7 +18,6 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent, data: { title: 'Home'} },
       { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Ajustes'}  },
       { path: 'form', component: FormComponent , data: { title: 'Alta empleado'}  },
-      { path: 'form-update/:id', component: FormUpdateComponent, data: { title: 'Modificar'}  },
       { path: 'search/:term', component: SearchComponent, data: { title: 'Buscador'}  },
       { path: 'user/:id', component: ProfileComponent , data: { title: 'Perfil'}  },
       { path: 'search/:term/:id', component: ProfileComponent , data: { title: 'Perfil'}  },

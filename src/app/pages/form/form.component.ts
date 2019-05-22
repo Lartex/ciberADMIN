@@ -12,30 +12,22 @@ export class FormComponent implements OnInit{
 
   @ViewChild('userData') public createForm: NgForm;
   users:any;
-  name:string;
   confirmText:string = "El usuario fue añadido con éxito."
   isAdded:boolean;
   date_now;
-  techs:any[] = [];
-  newUserAdded:any;
+
+  dataselect:any;
 
 
 
+  constructor(private _crudService: CrudService) {
 
-
-  constructor(private _crudService: CrudService) { }
+    this.dataselect = this._crudService.dataSelect();
+   }
 
 
   ngOnInit() {
     this.getUsers();
-
-    this.techs = [
-      {id:1, name:'Angular'},
-      {id:2, name:'Vue'},
-      {id:3, name:'Nodejs'},
-      {id:4, name:'Java'}
-    ]
-
 
   }
 
@@ -54,10 +46,10 @@ export class FormComponent implements OnInit{
 
      const userObj = {
       "firstName": user.name,
-      "lastName": user.apellidos,
-      "percent_dedication": user.dedicacion,
-      "experience": user.experiencia,
-      "in_project": user.proyecto,
+      "lastName": user.lastName,
+      "percent_dedication": user.dedication,
+      "experience": user.experience,
+      "in_project": user.project,
       "technology": user.tech,
       "date_enter": date_enter.toLocaleString(),
       "date_now": ''
@@ -68,10 +60,8 @@ export class FormComponent implements OnInit{
       .subscribe(
           res => {
            this.isAdded = true;
-           this.newUserAdded = res;
           }
       );
-
 
       this.createForm.reset();
 

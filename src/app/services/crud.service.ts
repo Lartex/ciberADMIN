@@ -61,5 +61,38 @@ export class CrudService {
   }
 
 
+  dataSelect(){
+    return {
+      "techs": [
+        {id:1, name:'Angular'},
+        {id:2, name:'Vue'},
+        {id:3, name:'Nodejs'},
+        {id:4, name:'Java'}
+      ],
+
+      "role": [
+        {id:1, name:'FrontEnd Developer'},
+        {id:2, name:'BackEnd Developer'},
+        {id:3, name:'FullStack Developer'},
+        {id:4, name:'DevOps'}
+      ],
+
+      "projects": [
+        {id:1, name:'Santander'},
+        {id:2, name:'Proyecto 2'},
+        {id:3, name:'Proyecto 3'},
+        {id:4, name:'Sin Proyecto'}
+      ],
+
+      "experience": [
+        {id:1, name:'0-1 Año'},
+        {id:2, name:'1-3 Años'},
+        {id:3, name:'3-5 Años'},
+        {id:4, name:'5+ Años'}
+      ]
+    }
+  }
+
+
 
 }

@@ -16,7 +16,6 @@ import { AccountSettingsComponent } from './pages/account-settings/account-setti
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { FormUpdateComponent } from './pages/form-update/form-update.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
@@ -33,7 +32,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
     PagesComponent,
     RegisterComponent,
     AccountSettingsComponent,
-    FormUpdateComponent,
     SearchComponent,
     ProfileComponent
   ],

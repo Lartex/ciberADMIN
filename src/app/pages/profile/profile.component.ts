@@ -16,32 +16,31 @@ export class ProfileComponent implements OnInit {
   techs: any[] = []
   date_now: any;
   date_thismoment: any;
+  dataselect:any;
 
   constructor(private _activatedRoute: ActivatedRoute,
     private crud: CrudService,
     private router: Router) {
 
+      this.dataselect = this.crud.dataSelect();
     this.getParams();
   }
 
   ngOnInit() {
-    this.techs = [
-      { id: 1, name: 'Angular' },
-      { id: 2, name: 'Vue' },
-      { id: 3, name: 'Nodejs' },
-      { id: 4, name: 'Java' }
-    ]
+
   }
+
+
 
   //Funcion que hace el update del usuario desde el perfil de usuario
   updateUser(values) {
 
     const user = {
       "firstName": values.name,
-      "lastName": values.apellidos,
-      "percent_dedication": values.dedicacion,
-      "experience": values.experiencia,
-      "in_project": values.proyecto,
+      "lastName": values.lastName,
+      "percent_dedication": values.dedication,
+      "experience": values.experience,
+      "in_project": values.project,
       "technology": values.tech,
       "date_enter": this.user.date_enter,
       "date_now": this.user.date_now
@@ -71,6 +70,10 @@ export class ProfileComponent implements OnInit {
   getParams() {
     this._activatedRoute.params.subscribe(params => {
       this.user = this.crud.getOneUser(params['id']);
+
+      // if(params['backsearch']){
+      //   this.backsearch = params['backsearch'];
+      // }
 
       this.date_now = moment(this.user.date_enter, 'DD/MM/YYYY');
       this.date_thismoment = moment(new Date(), 'DD/MM/YYYY');

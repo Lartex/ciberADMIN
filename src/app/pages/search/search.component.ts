@@ -12,10 +12,15 @@ export class SearchComponent implements OnInit {
   users:any;
   term:string;
 
+
+
   constructor(private _activatedRoute:ActivatedRoute,
               private crud:CrudService,
               private router:Router
-    ) { }
+    ) {
+
+
+     }
 
   ngOnInit() {
 
@@ -24,7 +29,6 @@ export class SearchComponent implements OnInit {
   }
 
   seeUser( idx:string) {
-    this.getParams();
     window.scrollTo(0,0);
     this.router.navigate(['/search', this.term, idx])
   }
@@ -35,6 +39,7 @@ export class SearchComponent implements OnInit {
       this.term = params['term'];
         this.users = this.crud.searchUser(params['term']);
         console.log(this.users);
+
     })
   }
 

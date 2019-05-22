@@ -8,22 +8,6 @@
 
                           <div class="card-body">
 
-                        <!--       <h4 class="card-title">Nuevo usuario</h4>
-                            <form id="newUser" name="newUser" #userData="ngForm" (ngSubmit)="addNewUser(userData.value)">
-                             <label for="Name"> Nombre </label>  <input type="text" name="name" id="name" ngModel><br>
-                             <label for="Name"> Apellidos </label>  <input type="apellidos" name="apellidos" id="apellidos" ngModel><br>
-                             <label for="Name"> Dedicacion </label>  <input type="dedicacion" name="dedicacion" id="dedicacion" ngModel><br>
-                             <label for="Name"> Experiencia </label>  <input type="experiencia" name="experiencia" id="experiencia" ngModel><br>
-                             <label for="Name"> Proyecto asignado  </label> <input type="proyecto" name="proyecto" id="proyecto" ngModel ><br>
-                             <label for="Name"> Tecnología </label>  <input type="tech" name="tech" id="tech" ngModel ><br>
-                             <input type="submit" class="btn btn-outline-primary" value="Nuevo usuario">
-                            </form>
-
-                            <br>
-
-                            <div *ngIf="isAdded" class="alert alert-success" role="alert">
-                                {{confirmText}}
-                              </div> -->
                               <legend>Nuevo usuario</legend>
 
                               <div class="tab-pane" id="settings" role="tabpanel">
@@ -39,32 +23,44 @@
                                           <div class="form-group" >
                                               <label for="example-email" class="col-md-12">Apellidos</label>
                                               <div class="col-md-12">
-                                                  <input class="form-control form-control-line" type="apellidos" name="apellidos" id="apellidos"  ngModel>
+                                                  <input class="form-control form-control-line" type="lastName" name="lastName" id="lastName"  ngModel>
                                               </div>
                                           </div>
                                           <div class="form-group">
-                                              <label class="col-md-12">Dedicacion</label>
-                                              <div class="col-md-12">
-                                                  <input  class="form-control form-control-line" type="dedicacion" name="dedicacion" id="dedicacion" ngModel>
-                                              </div>
-                                          </div>
+                                            <label class="col-md-12">Tecnologia</label>
+                                            <div class="col-md-12">
+                                                <select requiered ngModel class="form-control form-control-line"  name="dedication" id="dedication">
+                                                    <option *ngFor="let roles of dataselect.role" [value]="roles.name">
+                                                      {{roles.name}}
+                                                    </option>
+                                                 </select>
+                                            </div>
+                                        </div>
                                           <div class="form-group">
                                               <label class="col-md-12">Experiencia</label>
                                               <div class="col-md-12">
-                                                  <input  class="form-control form-control-line" type="experiencia" name="experiencia" id="experiencia" ngModel>
-                                              </div>
+                                                <select requiered ngModel class="form-control form-control-line"  name="experience" id="experience">
+                                                    <option *ngFor="let exp of dataselect.experience" [value]="exp.name">
+                                                      {{exp.name}}
+                                                    </option>
+                                                 </select>
+                                            </div>
                                           </div>
                                           <div class="form-group">
                                               <label class="col-md-12">Proyecto asignado</label>
                                               <div class="col-md-12">
-                                                  <input class="form-control form-control-line" type="proyecto" name="proyecto" id="proyecto" ngModel>
-                                              </div>
+                                                <select requiered ngModel class="form-control form-control-line"  name="project" id="project">
+                                                    <option *ngFor="let project of dataselect.projects" [value]="project.name">
+                                                      {{project.name}}
+                                                    </option>
+                                                 </select>
+                                            </div>
                                           </div>
                                           <div class="form-group">
                                               <label class="col-md-12">Tecnologia</label>
                                               <div class="col-md-12">
-                                                  <select requiered   [(ngModel)]="users" class="form-control form-control-line"  name="tech" id="tech">
-                                                      <option *ngFor="let tech of techs" [value]="tech.name">
+                                                  <select requiered ngModel class="form-control form-control-line"  name="tech" id="tech">
+                                                      <option *ngFor="let tech of dataselect.techs" [value]="tech.name">
                                                         {{tech.name}}
                                                       </option>
                                                    </select>
