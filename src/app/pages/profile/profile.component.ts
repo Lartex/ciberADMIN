@@ -23,10 +23,23 @@ export class ProfileComponent implements OnInit {
     private router: Router) {
 
       this.dataselect = this.crud.dataSelect();
-    this.getParams();
+      this.getUsers();
+    }
+
+    ngOnInit() {
+
+
+
   }
 
-  ngOnInit() {
+  getUsers(){
+    this.crud.getUsers()
+      .subscribe(data => {
+        this.user = data;
+        console.log(this.user)
+        this.getParams();
+      });
+
 
   }
 
@@ -71,9 +84,6 @@ export class ProfileComponent implements OnInit {
     this._activatedRoute.params.subscribe(params => {
       this.user = this.crud.getOneUser(params['id']);
 
-      // if(params['backsearch']){
-      //   this.backsearch = params['backsearch'];
-      // }
 
       this.date_now = moment(this.user.date_enter, 'DD/MM/YYYY');
       this.date_thismoment = moment(new Date(), 'DD/MM/YYYY');
