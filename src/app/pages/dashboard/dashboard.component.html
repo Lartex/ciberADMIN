@@ -68,18 +68,22 @@
                   <div class="col-lg-3 col-md-6" *ngFor="let user of users; let i = index" >
                       <!-- Card -->
                       <div class="card">
-                          <img *ngIf="user.technology == 'Angular'" class="card-img-top img-responsive" src="assets/images/angular.png" alt="Card image cap">
+                          <!-- <img *ngIf="user.technology == 'Angular'" class="card-img-top img-responsive" src="assets/images/angular.png" alt="Card image cap">
                           <img *ngIf="user.technology == 'Nodejs'" class="card-img-top img-responsive" src="assets/images/nodejs.png" alt="Card image cap">
                           <img *ngIf="user.technology == 'Java'" class="card-img-top img-responsive" src="assets/images/java.png" alt="Card image cap">
-                          <img *ngIf="user.technology == 'Vue'" class="card-img-top img-responsive" src="assets/images/vue.png" alt="Card image cap">
-
-                          <div class="card-body">
+                          <img *ngIf="user.technology == 'Vue'" class="card-img-top img-responsive" src="assets/images/vue.png" alt="Card image cap"> -->
+                          <img class="card-img-top img-responsive" src="assets/images/user.png" alt="Card image cap">
+                          <div class="card-body" >
 
                               <h3 class="card-title">{{user.firstName}} <span> {{user.lastName}}</span></h3>
                               <hr>
                               <p class="card-text">Fecha incorporacion: {{user.date_enter}}</p>
                               <p class="card-text">Antigüedad: {{user.date_now }} días</p>
-                              <p class="card-text">Tecnologia: {{user.technology }}</p>
+                              <p class="card-text">Tecnologia:
+                                <span class="label label-info label-rounded" *ngFor="let t of user.technology; let i = index">
+                                    {{ t.value }}
+                                </span>
+                              </p>
                               <p class="card-text">Experiencia: {{user.experience }}</p>
                               <button (click)="seeUser(i)" type="button" class="btn btn-outline-primary btn-blick">Ver perfil</button>
                               <!-- <a [routerLink]="['/user', i]"  class="btn btn-primary">Ver perfil</a> -->

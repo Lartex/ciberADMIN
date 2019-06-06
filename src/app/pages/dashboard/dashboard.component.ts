@@ -18,13 +18,19 @@ export class DashboardComponent implements OnInit {
   date_thismoment;
 
 
+
+
+
   constructor(private _crudService: CrudService,
     private router: Router) {
+
 
   }
 
 
   ngOnInit() {
+
+
     this.getUsers();
     this.getData();
 
@@ -41,6 +47,21 @@ export class DashboardComponent implements OnInit {
       .subscribe(data => {
         this.users = data;
         console.log(this.users)
+
+        // this.prueba = this.users[6].technology[0].name;
+
+        // console.log(this.prueba)
+
+        // for( let i = 0; i<this.users.length; i++){
+        //   for( let k = 0; k<this.users[i].technology.length; k++){
+
+        //     this.prueba.push(this.users[i].technology[k].name);
+        //     console.log( this.prueba);
+
+        //  // console.log(this.numero)
+        // }
+
+        // }
       });
   }
 

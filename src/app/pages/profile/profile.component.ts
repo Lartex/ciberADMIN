@@ -1,6 +1,8 @@
+import { ModalComponent } from './../modal/modal.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import * as moment from 'moment';
 
@@ -17,10 +19,19 @@ export class ProfileComponent implements OnInit {
   date_now: any;
   date_thismoment: any;
   dataselect:any;
+  dropdownList = [];
+  selectedItems = [];
+  dropdownSettings = {};
+  technology= [{value: 'Sin tecnología', tech: 'Nivel'}];
+  modalRef: BsModalRef;
+  message: string;
+  width:any;
+
 
   constructor(private _activatedRoute: ActivatedRoute,
     private crud: CrudService,
-    private router: Router) {
+    private router: Router,
+    private modalService: BsModalService) {
 
       this.dataselect = this.crud.dataSelect();
       this.getUsers();
@@ -28,7 +39,29 @@ export class ProfileComponent implements OnInit {
 
     ngOnInit() {
 
+      //Variable relacionada con las dynamic progress bars
 
+
+
+      //Configuracion para el correcto uso del dropdown de proyectos
+      this.dropdownList = [
+        {id:1, name:'Santander'},
+        {id:2, name:'Proyecto 1'},
+        {id:3, name:'Proyecto 2'},
+        {id:4, name:'Sin proyecto'}
+          ];
+          this.selectedItems = [
+            {id:4, name:'Sin proyecto'},
+          ];
+          this.dropdownSettings = {
+            singleSelection: false,
+            idField: 'id',
+            textField: 'name',
+            selectAllText: 'Seleccionar todos',
+            unSelectAllText: 'Quitar todo',
+            itemsShowLimit: 3,
+            allowSearchFilter: true
+          };
 
   }
 
@@ -38,6 +71,8 @@ export class ProfileComponent implements OnInit {
         this.user = data;
         console.log(this.user)
         this.getParams();
+        this.technology = this.user.technology;
+        this.width = this.user.technology[0].tech;
       });
 
 
@@ -51,12 +86,13 @@ export class ProfileComponent implements OnInit {
     const user = {
       "firstName": values.name,
       "lastName": values.lastName,
-      "percent_dedication": values.dedication,
+      "role": values.rol,
       "experience": values.experience,
       "in_project": values.project,
-      "technology": values.tech,
       "date_enter": this.user.date_enter,
-      "date_now": this.user.date_now
+      "date_now": this.user.date_now,
+      "technology": this.technology,
+      "bio": values.bio
     };
 
     this.crud.updateUser(user, this.user.id)
@@ -68,14 +104,14 @@ export class ProfileComponent implements OnInit {
 
   //Funcion que elimina al usuario.
   deleteUser(id) {
-    if (confirm("¿Estas seguro?")) {
+    this.modalRef.hide();
       this.crud.deleteUser(id)
         .subscribe(
           res => {
             this.router.navigate(['/dashboard'])
           }
         );
-    }
+
 
   }
 
@@ -90,11 +126,40 @@ export class ProfileComponent implements OnInit {
 
       let days = this.date_thismoment.diff(this.date_now, 'days');
       this.user.date_now = days;
+
+
       console.log(this.user)
 
     })
   }
 
+
+  //Control de añadir/eliminar tecnologias
+
+  add() {
+    this.technology.push({value: 'Nombre', tech: 'Nivel'});
+  }
+
+
+  remove(){
+    this.technology.pop();
+
+  }
+
+  //Control del modal
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+
+  confirm(): void {
+    this.message = 'Confirmed!';
+    this.modalRef.hide();
+  }
+
+  decline(): void {
+    this.message = 'Declined!';
+    this.modalRef.hide();
+  }
 
 
 

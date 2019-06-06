@@ -18,6 +18,11 @@ export class FormComponent implements OnInit{
 
   dataselect:any;
 
+  dropdownList = [];
+  selectedItems = [];
+  dropdownSettings = {};
+
+  technology= [{value: 'Sin tecnología', tech: 0}];
 
 
   constructor(private _crudService: CrudService) {
@@ -27,7 +32,28 @@ export class FormComponent implements OnInit{
 
 
   ngOnInit() {
+
+    this.dropdownList = [
+        {id:1, name:'Santander'},
+        {id:2, name:'Proyecto 1'},
+        {id:3, name:'Proyecto 2'},
+        {id:4, name:'Sin proyecto'}
+    ];
+    this.selectedItems = [
+      {id:4, name:'Sin proyecto'},
+    ];
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'id',
+      textField: 'name',
+      selectAllText: 'Seleccionar todos',
+      unSelectAllText: 'Quitar todo',
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
+
     this.getUsers();
+
 
   }
 
@@ -44,15 +70,17 @@ export class FormComponent implements OnInit{
     let date_enter = new Date().toLocaleString("es-EU", {timeZone: "Europe/Madrid"});
 
 
+
      const userObj = {
       "firstName": user.name,
       "lastName": user.lastName,
-      "percent_dedication": user.dedication,
+      "role": user.rol,
       "experience": user.experience,
       "in_project": user.project,
-      "technology": user.tech,
       "date_enter": date_enter.toLocaleString(),
-      "date_now": ''
+      "date_now": '',
+      "technology": this.technology,
+      "bio": user.bio
 
   };
 
@@ -67,6 +95,21 @@ export class FormComponent implements OnInit{
 
   }
 
+  onItemSelect(item: any) {
+    console.log(item);
+  }
+  onSelectAll(items: any) {
+    console.log(items);
+  }
 
+
+  add() {
+    this.technology.push({value: 'Nombre tecnologia', tech: 0});
+  }
+
+  remove(){
+    this.technology.pop();
+
+  }
 
 }

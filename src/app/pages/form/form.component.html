@@ -1,97 +1,140 @@
 <!-- ============================================================== -->
-              <!-- Start Page Content -->
-              <!-- ============================================================== -->
-              <div class="row">
-                  <!-- column -->
-                  <div class="col-lg-6">
-                      <div class="card">
-
-                          <div class="card-body">
-
-                              <legend>Nuevo usuario</legend>
-
-                              <div class="tab-pane" id="settings" role="tabpanel">
-                                  <div class="card-body">
-                                      <form  class="form-horizontal form-material" id="newUser" name="newUser" #userData="ngForm" (ngSubmit)="addNewUser(userData.value)">
-
-                                          <div class="form-group">
-                                              <label class="col-md-12">Nombre</label>
-                                              <div class="col-md-12">
-                                                  <input class="form-control form-control-line" type="text" name="name" id="name" ngModel>
-                                              </div>
-                                          </div>
-                                          <div class="form-group" >
-                                              <label for="example-email" class="col-md-12">Apellidos</label>
-                                              <div class="col-md-12">
-                                                  <input class="form-control form-control-line" type="lastName" name="lastName" id="lastName"  ngModel>
-                                              </div>
-                                          </div>
-                                          <div class="form-group">
-                                            <label class="col-md-12">Tecnologia</label>
-                                            <div class="col-md-12">
-                                                <select requiered ngModel class="form-control form-control-line"  name="dedication" id="dedication">
-                                                    <option *ngFor="let roles of dataselect.role" [value]="roles.name">
-                                                      {{roles.name}}
-                                                    </option>
-                                                 </select>
-                                            </div>
-                                        </div>
-                                          <div class="form-group">
-                                              <label class="col-md-12">Experiencia</label>
-                                              <div class="col-md-12">
-                                                <select requiered ngModel class="form-control form-control-line"  name="experience" id="experience">
-                                                    <option *ngFor="let exp of dataselect.experience" [value]="exp.name">
-                                                      {{exp.name}}
-                                                    </option>
-                                                 </select>
-                                            </div>
-                                          </div>
-                                          <div class="form-group">
-                                              <label class="col-md-12">Proyecto asignado</label>
-                                              <div class="col-md-12">
-                                                <select requiered ngModel class="form-control form-control-line"  name="project" id="project">
-                                                    <option *ngFor="let project of dataselect.projects" [value]="project.name">
-                                                      {{project.name}}
-                                                    </option>
-                                                 </select>
-                                            </div>
-                                          </div>
-                                          <div class="form-group">
-                                              <label class="col-md-12">Tecnologia</label>
-                                              <div class="col-md-12">
-                                                  <select requiered ngModel class="form-control form-control-line"  name="tech" id="tech">
-                                                      <option *ngFor="let tech of dataselect.techs" [value]="tech.name">
-                                                        {{tech.name}}
-                                                      </option>
-                                                   </select>
-                                              </div>
-                                          </div>
-
-                                          <div class="form-group">
-                                              <div class="col-sm-12">
-                                                  <button  class="btn btn-success">Crear</button>
-                                                   <button id="btn-2" class="btn btn-primary" [routerLink]="['/dashboard']" >Volver atrás</button>
-                                              </div>
-                                          </div>
-
-                                          <div *ngIf="isAdded" class="alert alert-success" role="alert">
-                                              {{confirmText}}
-                                            </div>
-
-                                      </form>
-
-
-                                  </div>
-                              </div>
-
-                          </div>
-                      </div>
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card ">
+      <div class="card-header bg-info">
+        <h4 class="m-b-0 text-white">Nuevo usuario</h4>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" id="newUser" name="newUser" #userData="ngForm"
+          (ngSubmit)="addNewUser(userData.value)">
+          <div class="form-body">
+            <h3 class="box-title">Información personal</h3>
+            <hr class="m-t-0 m-b-40">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="control-label text-right col-md-3">Nombre</label>
+                  <div class="col-md-9">
+                    <input class="form-control form-control-line" type="text" name="name" id="name" ngModel></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-groupd row">
+                  <label class="control-label text-right col-md-3">Apellido/s</label>
+                  <div class="col-md-9">
+                    <input class="form-control form-control-line" type="lastName" name="lastName" id="lastName" ngModel>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="control-label text-right col-md-3">Rol</label>
+                  <div class="col-md-9">
+                    <select requiered ngModel class="form-control  custom-select" name="rol" id="rol">
+                      <option *ngFor="let roles of dataselect.role" [value]="roles.name">
+                        {{roles.name}}
+                      </option>
+                    </select></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="control-label text-right col-md-3">Proyectos</label>
+                  <div class="col-md-9">
+                    <ng-multiselect-dropdown name="project" [data]="dropdownList" [(ngModel)]="selectedItems"
+                      [settings]="dropdownSettings" (onSelect)="onItemSelect($event)"
+                      (onSelectAll)="onSelectAll($event)">
+                    </ng-multiselect-dropdown>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="control-label text-right col-md-3">Experiencia</label>
+                  <div class="col-md-9">
+                    <select requiered ngModel class="form-control custom-select" name="experience" id="experience">
+                      <option *ngFor="let exp of dataselect.experience" [value]="exp.name">
+                        {{exp.name}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- Parte dinamica del formulario  -->
+            <!-- ============================================================== -->
+            <h3 class="box-title">Tecnologias
+              <img src="../../../assets/images/add.svg" alt="" (click)="add()">
+              <img src="../../../assets/images/remove.svg" alt="" width="24" height="24" (click)="remove()">
+            </h3>
+
+
+            <hr class="m-t-0 m-b-40">
+            <div>
+              <!--row dinamico-->
+              <div class="row" ngModelGroup="technology">
+                <div class="col-md-6" *ngFor="let tech of technology; let in=index">
+                  <div class="form-group row">
+                    <label class="control-label text-right col-md-3">Tecnología {{in+ 1}}</label>
+                    <div class="col-md-9">
+
+                      <select type="text" [(ngModel)]="technology[in].value" name="value{{in}}"
+                        class="form-control custom-select" #name="ngModel" required>
+                        <option *ngFor="let t of dataselect.techs" [value]="t.name">
+                          {{t.name}}
+                        </option>
+                      </select>
+
+                      <select type="text" [(ngModel)]="technology[in].tech" name="tech{{in}}"
+                        class="form-control custom-select" #name2="ngModel" required>
+                        <option *ngFor="let l of dataselect.levels" [value]="l.level">
+                          {{l.level}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
 
+               <!-- ============================================================== -->
+               <h3 class="box-title">Biografia</h3>
+             <hr class="m-t-0 m-b-40">
+            <div class="form-group">
+                  <textarea class="textarea_editor form-control col-md-6" rows="10" placeholder="Enter text ..." type="text" name="bio" id="bio" ngModel></textarea>
+              </div>
 
-              <!-- ============================================================== -->
-              <!-- End PAge Content -->
-              <!-- ============================================================== -->
+            </div><!-- end row dinamico-->
+
+          </div>
+          <hr>
+          <div class="form-actions">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-9">
+                    <button class="btn btn-success">Crear</button>
+                    <button id="btn-2" class="btn btn-primary" [routerLink]="['/dashboard']">Volver atrás</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6"> </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<!-- ============================================================== -->
+<!-- End PAge Content -->
+<!-- ============================================================== -->

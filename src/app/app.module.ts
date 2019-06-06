@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './pages/search/search.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalComponent } from './pages/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -33,17 +36,21 @@ import { ProfileComponent } from './pages/profile/profile.component';
     RegisterComponent,
     AccountSettingsComponent,
     SearchComponent,
-    ProfileComponent
+    ProfileComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    ModalModule.forRoot()
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ ModalComponent ]
 })
 export class AppModule { }

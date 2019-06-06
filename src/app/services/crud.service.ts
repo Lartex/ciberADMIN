@@ -89,6 +89,19 @@ export class CrudService {
         {id:2, name:'1-3 Años'},
         {id:3, name:'3-5 Años'},
         {id:4, name:'5+ Años'}
+      ],
+
+      "levels": [
+        {id:1, level:10},
+        {id:2, level:20},
+        {id:3, level:30},
+        {id:4, level:40},
+        {id:5, level:50},
+        {id:6, level:60},
+        {id:7, level:70},
+        {id:8, level:80},
+        {id:9, level:90},
+        {id:10, level:100}
       ]
     }
   }
