@@ -1,46 +1,20 @@
-pipeline{
-    agent{
-        label "master"
+
+pipeline {
+    agent {
+        docker {
+            image 'node:latest'
+            args '-p 3000:3000'
+        }
     }
-    stages{
-        
-            stage('npm-build') {
-                agent {
-                    docker {
-                        image 'node:latest'
-                    }
-                }
-
-                steps {
-                    echo "Branch is ${env.BRANCH_NAME}..."
-
-                    withNPM(npmrcConfig:'my-custom-npmrc') {
-                        echo "Performing npm build..."
-                        sh 'npm install'
-                    }
-                }
-            }
-
-            stage('Execute Angular project'){
-               steps {
-                    echo "Starting Angular"
-
-                    withNPM(npmrcConfig:'my-custom-npmrc') {
-                        echo "Performing npm build..."
-                        sh 'npm build'
-                    }
-                } 
-            }
+    environment {
+        CI = 'true'
     }
-    post{
-        always{
-            echo "========always========"
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm build'
+            }
         }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
-        }
+
     }
 }
