@@ -1,20 +1,17 @@
-
 pipeline {
     agent {
-        docker {
-            image 'node:latest'
-            args '-p 3000:3000'
-        }
-    }
-    environment {
-        CI = 'true'
+        docker { image 'node:10-alpine' }
     }
     stages {
-        stage('Build') {
+        stage('Restore') {
             steps {
-                sh 'npm install ng build --prod'
+                sh 'npm install'
             }
         }
-
+        stage('Build') {
+            steps {
+                sh 'ng build --prod'
+            }
+        }         
     }
 }
