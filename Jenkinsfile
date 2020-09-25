@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm build'
+                sh 'npm install ng build --prod'
             }
         }
 
