@@ -8,10 +8,15 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Build') {
+        stage('Update') {
+            steps {
+                sh 'npm update'
+            }
+        }   
+                stage('Build') {
             steps {
                 sh 'npm run ng build'
             }
-        }         
+        }       
     }
 }
