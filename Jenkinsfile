@@ -20,6 +20,17 @@ pipeline{
                     }
                 }
             }
+
+            stage('Execute Angular project'){
+               steps {
+                    echo "Starting Angular"
+
+                    withNPM(npmrcConfig:'my-custom-npmrc') {
+                        echo "Performing npm build..."
+                        sh 'npm build'
+                    }
+                } 
+            }
     }
     post{
         always{
