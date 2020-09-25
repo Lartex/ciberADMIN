@@ -7,7 +7,7 @@ pipeline{
             stage('npm-build') {
                 agent {
                     docker {
-                        image 'node:7.4'
+                        image 'node:latest'
                     }
                 }
 
