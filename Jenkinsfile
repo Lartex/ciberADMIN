@@ -1,7 +1,6 @@
 pipeline {
-    agent {
-        docker { image 'node:10-alpine' }
-    }
+    agent any
+    tools {nodejs "NODEJS"}
     stages {
         stage('Restore') {
             steps {
@@ -10,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm run ng -- build'
+                sh 'npm run build'
             }
         }         
     }
