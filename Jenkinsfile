@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Start APP') {
             steps {
-                sh 'nohup npm start'
+                sh 'forever start node_modules/@angular/cli/bin/ng serve'
             }
         }                     
     }
