@@ -14,7 +14,8 @@ pipeline {
         }
         stage('Start APP') {
             steps {
-                sh 'npm start'
+                sh 'npm install forever -g'
+                sh 'forever start node_modules/@angular/cli/bin/ng serve'
             }
         }                     
     }

@@ -58,6 +58,32 @@
         }
       ],
       "id": 1
+    },
+    {
+      "firstName": "dsad",
+      "lastName": "sdada",
+      "role": "BackEnd Developer",
+      "experience": "1-3 Años",
+      "in_project": [
+        {
+          "id": 4,
+          "name": "Sin proyecto"
+        },
+        {
+          "id": 2,
+          "name": "Proyecto 1"
+        }
+      ],
+      "date_enter": "1/10/2020 10:40:52",
+      "date_now": "",
+      "technology": [
+        {
+          "value": "Vue",
+          "tech": "30"
+        }
+      ],
+      "bio": "dasda",
+      "id": 2
     }
   ]
 }
