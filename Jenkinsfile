@@ -9,14 +9,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm run build'
+                sh 'npm run build --prod'
             }
         }
-        stage('Start APP') {
-            steps {
-                sh 'npm install forever -g'
-                sh 'forever start ./node_modules/@angular/cli/bin/ng serve'
-            }
-        }                     
+//        stage('Start APP') {
+//            steps {
+//                sh 'npm install forever -g'
+//            }
+//        }                     
     }
 }
